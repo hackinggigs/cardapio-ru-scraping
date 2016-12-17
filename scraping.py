@@ -31,11 +31,11 @@ daily_menu = {}
 for idx, value in enumerate(cells):
 	daily_menu = {}
 	if (idx%7 == 0):
-		daily_menu['basics'] 	= cells[idx+1] + ', ' + cells[idx+2]
+		daily_menu['basics'] 			= cells[idx+1] + ', ' + cells[idx+2]
 		daily_menu['main_dish'] 		= cells[idx+3]
 		daily_menu['side_dish'] 		= cells[idx+4]
 		daily_menu['salad'] 			= cells[idx+5]
-		daily_menu['dessert'] 		= cells[idx+6]
+		daily_menu['dessert'] 			= cells[idx+6]
 		daily_menu['date']				= str(date)
 		menu.append(daily_menu)
 		date += datetime.timedelta(days=1)
