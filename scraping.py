@@ -45,12 +45,3 @@ data = {'menu': menu}
 # Saves to JSON
 with open('data.json', 'w') as fp:
     json.dump(data, fp, sort_keys=True, indent=4)
-
-
-
-
-
-
-
-
-
