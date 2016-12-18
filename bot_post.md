@@ -66,7 +66,7 @@ So yep, once AWS EB finished setting up the instance we finished this part. This
 
 ![](images/api.png)
 
-Next, let’s take a look in the real fun: **The Robot**.
+Next, let’s dive into the real fun: **The Robot**.
 
 ## Creating a talkative Facebook Messenger bot
 It was hard. But we made it work.
