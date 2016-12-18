@@ -37,9 +37,9 @@ table = soup.find('tbody')  # Table contents
 ```
 To extract the date from text, we used some regex searches with Python’s module `re` and then formatted it with `datetime` module.   
 
-To parse the table, we first iterated over all **td** tags and appended all items to a list. Then, we organized the list’s content into an array of dictionaries grouping the data for each day of the week. 
+To parse the table, we first iterated over all **td** tags inside **tbody** and appended all items to a list. Then, we organized the list’s content into an array of dictionaries grouping the data for each day of the week. 
 
-Having the data extracted, we needed to make it available. That’s when Flask came into to play. We elegantly implemented a simple REST API that returns a JSON object with the weekly menu:
+Having the data extracted, we needed to make it available for the bot to request it. That’s when Flask came into to play. We elegantly implemented a simple REST API that returns a JSON object with the weekly menu:
 ```
 from flask import Flask, jsonify
 import scraping  # Our own script shown above
