@@ -6,6 +6,7 @@ So, we started asking ourselves: what could be a useful application for that? Tu
 To start with, we decided to implement a chat bot that sends the daily menu.  That was our mission until the end of the gig. 
 
 We started defining the systems functions:
+
 1. Scrape uni’s restaurant menu from official website and make it available through an API;
 2. Request data from bot server;
 3. Send scheduled messages to students just before noon.
@@ -14,7 +15,7 @@ Our implementation is described next.
 
 ## Scraping the restaurant page with Python and serving with Flask
 The webpage looks like this:
-![](bot_post/webpage.png)
+![](images/webpage.png)
 As you can see, it is a boring, dull menu table that makes student life really (REALLY.) hard and unsatisfying.
 
 To get the data, we chose Python and its modules `request` and `BeautifulSoup`. Besides extracting the from the menu table we needed to get the menu’s date from the top page title. Below are some excerpts of the scraping code:
@@ -60,7 +61,7 @@ if __name__ == "__main__":
 With this code up and running locally, we proceeded to deploy it to the cloud using Amazon AWS. We followed [this tutorial](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html) - and thanked [this issue](http://stackoverflow.com/questions/20558747/how-to-deploy-structured-flask-app-on-aws-elastic-beanstalk) - to make it work. Also, we learned the hard way **you must commit and push your changes** before each Elastic Beanstalk deployment. Otherwise it might fail and steal more or less 3 hours of your life (if you’re lucky).
 
 So yep, once AWS EB finished setting up the instance we finished this part. This is how we delivered the scraping result:
-![](bot_post/api.png)
+![](images/api.png)
 
 Next, let’s take a look in the real fun: **The Robot**.
 
