@@ -32,7 +32,7 @@ soup = BeautifulSoup(r.text, "html.parser")  # Makes usable 'soup' from page HTM
 
 text = soup.find('p').text  # Title with date is the page's first paragraph 
 #(...)
-table = soup.find('tbody')
+table = soup.find('tbody')  # Table contents
 #(...)
 ```
 To extract the date from text, we used some regex searches with Python’s module `re` and then formatted it with `datetime` module.   
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     application.run()
 ```
 
-With this code up and running locally, we proceeded to deploy it to the cloud using Amazon AWS. We followed [this tutorial](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html) - and thanked [this issue](http://stackoverflow.com/questions/20558747/how-to-deploy-structured-flask-app-on-aws-elastic-beanstalk) - to make it work. Also, we learned the hard way **you must commit and push your changes** before each Elastic Beanstalk deployment. Otherwise it might fail and steal more or less 3 hours of your life (if you’re lucky).
+With this code up and running locally, we proceeded to deploy it to the cloud using Amazon AWS. We followed [this tutorial](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html) - and thanked [this issue](http://stackoverflow.com/questions/20558747/how-to-deploy-structured-flask-app-on-aws-elastic-beanstalk) - to make it work. Also, we learned the hard way **you must commit and push your changes** before each Elastic Beanstalk deployment (even if it doesn't make much sense, since GH and EB don't have any explicit relation). Otherwise it might fail and steal more or less 3 hours of your life (if you’re lucky).
 
 So yep, once AWS EB finished setting up the instance we finished this part. This is how we delivered the scraping result:
 
